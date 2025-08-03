@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ROOTXDIGITAL.COM - Coming Soon</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0d0d0d;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2rem;
+      letter-spacing: 2px;
+      animation: fadeIn 2s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Optional glowing effect */
+    h1.glow {
+      text-shadow: 0 0 10px #ffffffaa, 0 0 20px #00ffe5aa, 0 0 30px #00ffe5cc;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="message">ROOTXDIGITAL.COM will be in production soon</h1>
+
+  <script>
+    // Optional: Add glow effect after delay
+    setTimeout(() => {
+      document.getElementById("message").classList.add("glow");
+    }, 2000);
+  </script>
+</body>
+</html>
