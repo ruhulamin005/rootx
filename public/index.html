@@ -79,9 +79,9 @@
   <section class="quote" id="quote">
     <div class="container">
       <h2>Request a Quote</h2>
-      <form id="quoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form id="quoteForm" action="/api/quote" method="POST" novalidate>
         <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="_replyto" placeholder="Your Email" required />
+        <input type="email" name="email" placeholder="Your Email" required />
         <input type="text" name="phone" placeholder="Your Phone" />
         <select name="service">
           <option>Website Development</option>
@@ -91,7 +91,10 @@
           <option>API/Microservice</option>
         </select>
         <textarea name="message" placeholder="Project Details" required></textarea>
+          <!-- Honeypot (bots fill this; humans don't) -->
+          <input type="text" name="company" autocomplete="off" tabindex="-1" style="display:none" />
         <button type="submit">Send Request</button>
+          <p id="formMsg" role="status" style="margin-top:.75rem;"></p>
       </form>
     </div>
   </section>
@@ -103,6 +106,6 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="/main.js"></script>
 </body>
 </html>
