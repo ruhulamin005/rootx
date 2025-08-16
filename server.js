@@ -48,6 +48,13 @@ transporter.verify().then(
 );
 
 
+// api/ping.js
+export const config = { runtime: 'nodejs18.x' }; // ensure Node, not Edge
+
+export default function handler(req, res) {
+  console.log('PING hit', { method: req.method, ua: req.headers['user-agent'] });
+  res.status(200).json({ ok: true, now: Date.now(), method: req.method });
+}
 
 // --- POST /api/quote
 app.post('/api/quote',  upload.none(), async (req, res) => {
